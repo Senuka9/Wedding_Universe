@@ -1,0 +1,280 @@
+:root {
+  --primary-color: #B37CD9;
+  --primary-hover: #9B63C3;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-radius: 12px;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+/* Navigation */
+.navbar {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: serif;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #1a1a1a;
+}
+
+.nav-link.active {
+    font-weight: 600;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.2s;
+    width: 200px;
+}
+
+.search-input:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    width: 1rem;
+    height: 1rem;
+}
+
+.profile-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid transparent; /* Transparent border to allow gradient */
+    background: linear-gradient(135deg, #ff7eb3, #ff758c); /* Gradient border */
+    padding: 2px; /* Space for the border effect */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1); /* Soft overlay effect */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Hover Effects */
+.profile-icon:hover {
+    transform: scale(1.1) rotate(3deg); /* Slight enlarge and rotation */
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+}
+
+.profile-icon:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+#app {
+  padding-top: 80px;
+}
+
+.help-center {
+  max-width: 1280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.help-center h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.search2-container {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#search2Help {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+#search2Help:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.search2-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search2-button:hover {
+  background: var(--primary-hover);
+}
+
+.help-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.help-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.help-card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.help-card h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.help-card p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.view-help-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.view-help-btn:hover {
+  background: var(--primary-hover);
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .help-center {
+    padding: 1rem;
+  }
+
+  .help-center h1 {
+    font-size: 2rem;
+  }
+
+  .search-container {
+    padding: 0 1rem;
+  }
+
+  .help-categories {
+    grid-template-columns: 1fr;
+  }
+}
