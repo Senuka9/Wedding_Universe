@@ -264,7 +264,34 @@
         </style>
     </head>
     <body>
-
+        <div style="
+             background-color: #4A1769;
+             padding: 16px 32px;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             color: white;
+             font-family: 'Segoe UI', sans-serif;
+             font-weight: 600;
+             font-size: 1.2rem;
+             ">
+            <div>
+                🛠 Admin Dashboard
+            </div>
+            <div>
+                <a href="../logout.jsp" style="
+                   background-color: #EF4444;
+                   color: white;
+                   text-decoration: none;
+                   padding: 8px 16px;
+                   border-radius: 6px;
+                   font-weight: bold;
+                   transition: background-color 0.3s ease;
+                   " onmouseover="this.style.backgroundColor = '#DC2626'" onmouseout="this.style.backgroundColor = '#EF4444'">
+                    🔓 Logout
+                </a>
+            </div>
+        </div>
         <div class="dashboard-container">
             <div class="dashboard-header">
                 <h1>Welcome Admin</h1>
